@@ -60,6 +60,15 @@ window.BackendCalendarDefaultView = window.BackendCalendarDefaultView || {};
         });
 
         /**
+         * Event: Popover Confirm Button "Click"
+         *
+         * Confirms the appointment selected
+         */
+        $calendarPage.on('click', '.confirm-popover', function () {
+            $(this).parents('.popover').popover('dispose');
+        })
+
+        /**
          * Event: Popover Edit Button "Click"
          *
          * Enables the edit dialog of the selected calendar event.
@@ -421,6 +430,17 @@ window.BackendCalendarDefaultView = window.BackendCalendarDefaultView || {};
                                         'text': EALang.edit
                                     })
                                 ]
+                            }),
+                            $('<button/>', {
+                                'class': 'confirm-popover btn btn-primary ' + displayEdit,
+                                'html': [
+                                    $('<i/>', {
+                                        'class': 'fas fa-calendar-check mr-2'
+                                    }),
+                                    $('<span/>', {
+                                        'text': EALang.confirm
+                                    })
+                                ]
                             })
                         ]
                     })
@@ -504,6 +524,17 @@ window.BackendCalendarDefaultView = window.BackendCalendarDefaultView || {};
                                     }),
                                     $('<span/>', {
                                         'text': EALang.edit
+                                    })
+                                ]
+                            }),
+                            $('<button/>', {
+                                'class': 'confirm-popover btn btn-primary ' + displayEdit,
+                                'html': [
+                                    $('<i/>', {
+                                        'class': 'fas fa-calendar-check mr-2'
+                                    }),
+                                    $('<span/>', {
+                                        'text': EALang.confirm
                                     })
                                 ]
                             }),
@@ -641,6 +672,17 @@ window.BackendCalendarDefaultView = window.BackendCalendarDefaultView || {};
                                     }),
                                     $('<span/>', {
                                         'text': EALang.edit
+                                    })
+                                ]
+                            }),
+                            $('<button/>', {
+                                'class': 'confirm-popover btn btn-primary ' + displayEdit,
+                                'html': [
+                                    $('<i/>', {
+                                        'class': 'fas fa-calendar-check mr-2'
+                                    }),
+                                    $('<span/>', {
+                                        'text': EALang.confirm
                                     })
                                 ]
                             })
